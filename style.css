@@ -8,13 +8,20 @@
 
 body{
     font-family:'VT323', monospace;
-    background:#000;
     color:white;
     min-height:100vh;
 
+    background:
+    linear-gradient(
+    180deg,
+    #1142a8 0%,
+    #081d4d 40%,
+    #020b1f 100%
+    );
+
     background-image:
-    radial-gradient(#ff66cc 2px, transparent 2px),
-    radial-gradient(#fff 1px, transparent 1px);
+    radial-gradient(#6fdcff 2px, transparent 2px),
+    radial-gradient(#ffffff 1px, transparent 1px);
 
     background-size:60px 60px, 30px 30px;
 }
@@ -33,9 +40,11 @@ body{
 .title h1{
     font-size:4rem;
     color:white;
+
     text-shadow:
-    0 0 10px #ff4fc3,
-    0 0 20px #ff4fc3;
+    0 0 10px #6fdcff,
+    0 0 20px #6fdcff,
+    0 0 40px #6fdcff;
 }
 
 .grid{
@@ -45,19 +54,20 @@ body{
 }
 
 .box{
-    background:#050505;
-    border:3px solid #ff4fc3;
+    background:rgba(0,15,45,.85);
+
+    border:3px solid #6fdcff;
 
     box-shadow:
-    0 0 15px #ff4fc3,
-    inset 0 0 15px rgba(255,79,195,.2);
+    0 0 15px #6fdcff,
+    inset 0 0 15px rgba(111,220,255,.15);
 
     padding:15px;
 }
 
 .profile img{
     width:100%;
-    border:3px solid #ff4fc3;
+    border:3px solid #6fdcff;
 }
 
 .status{
@@ -72,7 +82,7 @@ body{
 .mood{
     margin-top:15px;
     padding:10px;
-    border:2px solid #ff4fc3;
+    border:2px solid #6fdcff;
 }
 
 .about{
@@ -81,9 +91,9 @@ body{
 
 .about h2,
 .interests h2,
-.friends h2{
+.favorites h2{
     margin-bottom:15px;
-    color:#ff84d8;
+    color:#d8f8ff;
 }
 
 .interests ul{
@@ -94,7 +104,7 @@ body{
     margin:10px 0;
 }
 
-.friends{
+.favorites{
     grid-column:2;
 }
 
@@ -108,7 +118,41 @@ body{
     width:100%;
     aspect-ratio:1;
     object-fit:cover;
-    border:3px solid #ff4fc3;
+
+    border:3px solid #6fdcff;
+
+    transition:.3s;
+}
+
+.friend-grid img:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 10px #6fdcff,
+    0 0 20px #6fdcff;
+}
+
+h1,h2{
+    letter-spacing:2px;
+}
+
+.box:hover{
+    box-shadow:
+    0 0 20px #6fdcff,
+    0 0 40px rgba(111,220,255,.4),
+    inset 0 0 15px rgba(111,220,255,.15);
+}
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#05122c;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#6fdcff;
 }
 
 @media(max-width:800px){
@@ -117,7 +161,7 @@ body{
         grid-template-columns:1fr;
     }
 
-    .friends{
+    .favorites{
         grid-column:auto;
     }
 
