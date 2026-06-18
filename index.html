@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna 💙</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Inter',sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 15% 15%, #7be0ff 0%, transparent 25%),
+    radial-gradient(circle at 85% 80%, #4fc3ff 0%, transparent 20%),
+    radial-gradient(circle at center, #0d4c8d 0%, #06294f 40%, #021224 100%);
+}
+
+/* Luzes de fundo */
+
+.glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.5;
+}
+
+.glow1{
+    width:350px;
+    height:350px;
+    background:#72e4ff;
+    top:-100px;
+    left:-100px;
+}
+
+.glow2{
+    width:300px;
+    height:300px;
+    background:#1ca3ff;
+    bottom:-80px;
+    right:-80px;
+}
+
+/* Bolhas */
+
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    animation:float 8s ease-in-out infinite;
+}
+
+.b1{
+    width:120px;
+    height:120px;
+    top:15%;
+    left:10%;
+}
+
+.b2{
+    width:70px;
+    height:70px;
+    bottom:18%;
+    left:20%;
+    animation-delay:2s;
+}
+
+.b3{
+    width:160px;
+    height:160px;
+    right:10%;
+    top:18%;
+    animation-delay:4s;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+/* Card principal */
+
+.card{
+
+    width:90%;
+    max-width:900px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:32px;
+
+    padding:50px;
+
+    position:relative;
+
+    box-shadow:
+    0 8px 40px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+}
+
+/* Reflexo */
+
+.card::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    border-radius:32px;
+
+    background:
+    linear-gradient(
+        120deg,
+        rgba(255,255,255,.15),
+        transparent 30%
+    );
+
+    pointer-events:none;
+}
+
+/* Badge */
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    color:#cfefff;
+
+    font-size:.9rem;
+}
+
+/* Título */
+
+h1{
+
+    margin-top:18px;
+
+    color:white;
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    text-shadow:
+    0 0 20px rgba(130,220,255,.6);
+}
+
+.subtitle{
+
+    margin-top:12px;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:1.1rem;
+}
+
+.text{
+
+    margin-top:35px;
+
+    color:rgba(255,255,255,.9);
+
+    font-size:1.1rem;
+
+    line-height:1.9;
+}
+
+/* Botão */
+
+button{
+
+    margin-top:35px;
+
+    border:none;
+
+    border-radius:18px;
+
+    padding:16px 30px;
+
+    font-size:1rem;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #89ecff,
+        #1e9fff
+    );
+
+    box-shadow:
+    0 0 30px rgba(80,190,255,.5);
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+#msg{
+
+    margin-top:25px;
+
+    color:#e7fbff;
+
+    font-size:1.15rem;
+}
+
+/* Grid estilo HeySpace */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+    margin-top:40px;
+}
+
+.info-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    color:white;
+}
+
+.info-card span{
+    display:block;
+    font-size:.9rem;
+    opacity:.7;
+}
+
+.info-card strong{
+    font-size:1.1rem;
+}
+</style>
+</head>
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+
+<div class="card">
+
+<div class="badge">💙 Exclusivo para Anna</div>
+
+<h1>Anna</h1>
+
+<p class="subtitle">
+Um pequeno universo Frutiger Aero criado especialmente para você.
+</p>
+
+<p class="text">
+Entre céus azuis, oceanos brilhantes e milhões de estrelas,
+você continua sendo meu lugar favorito.
+
+Obrigado por existir e tornar meus dias melhores.
+💙✨🌊
+</p>
+
+<button onclick="mensagem()">
+Abrir mensagem especial
+</button>
+
+<p id="msg"></p>
+
+<div class="info-grid">
+
+<div class="info-card">
+<span>Motivo</span>
+<strong>Você 💙</strong>
+</div>
+
+<div class="info-card">
+<span>Energia</span>
+<strong>∞ Amor</strong>
+</div>
+
+<div class="info-card">
+<span>Status</span>
+<strong>Feliz com Anna</strong>
+</div>
+
+</div>
+
+</div>
+
+<script>
+function mensagem(){
+    document.getElementById("msg").innerHTML =
+    "Anna, entre todas as possibilidades do universo, você continua sendo a minha favorita. 💙";
+}
+</script>
+
+</body>
+</html>
