@@ -1,168 +1,190 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:'VT323', monospace;
-    color:white;
-    min-height:100vh;
+font-family:'VT323', monospace;
 
-    background:
-    linear-gradient(
-    180deg,
-    #1142a8 0%,
-    #081d4d 40%,
-    #020b1f 100%
-    );
+background:
+linear-gradient(
+180deg,
+#0f3d91 0%,
+#081f4d 45%,
+#000000 100%
+);
 
-    background-image:
-    radial-gradient(#6fdcff 2px, transparent 2px),
-    radial-gradient(#ffffff 1px, transparent 1px);
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+}
 
-    background-size:60px 60px, 30px 30px;
+/* estrelas */
+
+body::before{
+content:"";
+
+position:fixed;
+inset:0;
+
+background-image:
+radial-gradient(#ffffff 1px, transparent 1px),
+radial-gradient(#7ee6ff 2px, transparent 2px);
+
+background-size:
+30px 30px,
+80px 80px;
+
+opacity:.35;
+pointer-events:none;
 }
 
 .container{
-    width:1200px;
-    max-width:95%;
-    margin:40px auto;
+width:1100px;
+max-width:95%;
+margin:auto;
+padding:30px;
 }
 
-.title{
-    text-align:center;
-    margin-bottom:20px;
+.name{
+
+font-size:4rem;
+text-align:center;
+
+margin-bottom:20px;
+
+color:white;
+
+text-shadow:
+0 0 10px #7ee6ff,
+0 0 20px #7ee6ff,
+0 0 40px #7ee6ff;
 }
 
-.title h1{
-    font-size:4rem;
-    color:white;
-
-    text-shadow:
-    0 0 10px #6fdcff,
-    0 0 20px #6fdcff,
-    0 0 40px #6fdcff;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:350px 1fr;
-    gap:20px;
+.layout{
+display:grid;
+grid-template-columns:380px 1fr;
+gap:20px;
 }
 
 .box{
-    background:rgba(0,15,45,.85);
 
-    border:3px solid #6fdcff;
+background:rgba(0,0,0,.9);
 
-    box-shadow:
-    0 0 15px #6fdcff,
-    inset 0 0 15px rgba(111,220,255,.15);
+border:3px solid #4dc7ff;
 
-    padding:15px;
+box-shadow:
+0 0 10px #4dc7ff,
+inset 0 0 10px rgba(77,199,255,.2);
+
+padding:15px;
 }
 
-.profile img{
-    width:100%;
-    border:3px solid #6fdcff;
+.profile-box{
+display:flex;
+gap:15px;
 }
 
-.status{
-    margin-top:15px;
+.profile-pic{
+width:180px;
+height:180px;
+object-fit:cover;
+
+border:3px solid #4dc7ff;
+}
+
+.profile-info{
+font-size:1.4rem;
 }
 
 .online{
-    color:#00ff66;
-    font-size:1.4rem;
+display:block;
+margin-top:15px;
+color:#00ff55;
 }
 
-.mood{
-    margin-top:15px;
-    padding:10px;
-    border:2px solid #6fdcff;
+.mood-box{
+margin-top:15px;
+text-align:center;
+font-size:1.5rem;
 }
 
-.about{
-    min-height:250px;
+.interests{
+margin-top:15px;
 }
 
-.about h2,
-.interests h2,
-.favorites h2{
-    margin-bottom:15px;
-    color:#d8f8ff;
+.interests h2{
+margin-bottom:10px;
+color:#c7f5ff;
 }
 
 .interests ul{
-    list-style:none;
+list-style:none;
+margin-top:10px;
 }
 
 .interests li{
-    margin:10px 0;
+margin:6px 0;
+}
+
+.about h2{
+margin-bottom:10px;
+color:#c7f5ff;
+}
+
+.about h3{
+margin-top:10px;
 }
 
 .favorites{
-    grid-column:2;
+margin-top:20px;
 }
 
-.friend-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
+.favorites h2{
+margin-bottom:15px;
+color:#c7f5ff;
 }
 
-.friend-grid img{
-    width:100%;
-    aspect-ratio:1;
-    object-fit:cover;
-
-    border:3px solid #6fdcff;
-
-    transition:.3s;
+.character-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
-.friend-grid img:hover{
-    transform:scale(1.05);
-
-    box-shadow:
-    0 0 10px #6fdcff,
-    0 0 20px #6fdcff;
+.char{
+text-align:center;
 }
 
-h1,h2{
-    letter-spacing:2px;
+.char img{
+width:100%;
+aspect-ratio:1;
+object-fit:cover;
+
+border:3px solid #4dc7ff;
+}
+
+.char span{
+display:block;
+margin-top:5px;
 }
 
 .box:hover{
-    box-shadow:
-    0 0 20px #6fdcff,
-    0 0 40px rgba(111,220,255,.4),
-    inset 0 0 15px rgba(111,220,255,.15);
+box-shadow:
+0 0 15px #4dc7ff,
+0 0 30px #4dc7ff;
 }
 
-::-webkit-scrollbar{
-    width:10px;
+@media(max-width:900px){
+
+.layout{
+grid-template-columns:1fr;
 }
 
-::-webkit-scrollbar-track{
-    background:#05122c;
+.character-grid{
+grid-template-columns:repeat(2,1fr);
 }
-
-::-webkit-scrollbar-thumb{
-    background:#6fdcff;
-}
-
-@media(max-width:800px){
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .favorites{
-        grid-column:auto;
-    }
 
 }
