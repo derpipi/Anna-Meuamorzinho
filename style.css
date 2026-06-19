@@ -272,3 +272,12 @@ a:hover{
 }
 
 }
+
+#musicas iframe{
+border-radius:15px;
+overflow:hidden;
+}
+
+#musicas .content{
+text-align:center;
+}
