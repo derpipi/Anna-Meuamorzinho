@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Halpa ocean</title>
+<title>Halpa Ocean</title>
 
 <style>
 
@@ -11,6 +11,10 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
@@ -46,6 +50,11 @@ background:#050505;
 border:3px solid #2962ff;
 box-shadow:0 0 15px #2962ff;
 margin-bottom:20px;
+transition:0.2s;
+}
+
+.box:hover{
+transform:scale(1.01);
 }
 
 .title{
@@ -76,20 +85,19 @@ line-height:1.7;
 
 .friends{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px;
-}
-
-.friend img{
-width:100%;
-height:120px;
-object-fit:cover;
-border:2px solid #4da3ff;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
 }
 
 .friend{
 text-align:center;
-font-size:14px;
+}
+
+.friend img{
+width:100%;
+height:150px;
+object-fit:cover;
+border:2px solid #4da3ff;
 }
 
 .comment{
@@ -99,9 +107,24 @@ padding:10px;
 margin-top:10px;
 }
 
-.interests li{
+.interests{
 list-style:none;
-padding:4px;
+}
+
+.interests li{
+margin-bottom:5px;
+}
+
+.interests a{
+display:block;
+padding:8px;
+color:white;
+text-decoration:none;
+}
+
+.interests a:hover{
+background:#163c82;
+color:#4da3ff;
 }
 
 .pixel{
@@ -132,7 +155,10 @@ src="https://i.imgur.com/Fv9Jz14.jpeg">
 
 <h2 class="pixel">LULUZINHA!!</h2>
 
-<p>LITERALMENTE A MAIS PERFEITA (e mais cega pra conseguir ficar com o gabriel)</p>
+<p>
+LITERALMENTE A MAIS PERFEITA
+(e mais cega pra conseguir ficar com o gabriel)
+</p>
 
 <p class="online">💙 Namorando</p>
 
@@ -143,14 +169,23 @@ src="https://i.imgur.com/Fv9Jz14.jpeg">
 <div class="title">Curiosidades</div>
 
 <div class="content">
+
 <ul class="interests">
-<li>Hobbies</li>
-<li>Musicas</li>
-<li>Comidas favoritas</li>
-<li>Personagens favoritos</li>
-<li>Gostos</li>
-<li>Namorado</li>
+
+<li><a href="#hobbies">Hobbies</a></li>
+
+<li><a href="#musicas">Músicas</a></li>
+
+<li><a href="#comidas">Comidas favoritas</a></li>
+
+<li><a href="#personagens">Personagens favoritos</a></li>
+
+<li><a href="#gostos">Gostos</a></li>
+
+<li><a href="#namorado">Namorado</a></li>
+
 </ul>
+
 </div>
 </div>
 
@@ -163,35 +198,43 @@ src="https://i.imgur.com/Fv9Jz14.jpeg">
 
 <div class="content about">
 
-Estou dedicando literalmente meu tempo pra Criar esse site para minha incrível Momolada, Meu unico e ultimo amor (embora sua mae ache o contrario), sou bem ruim ja que estou programando no celular, mas fiz o meu melhor MWA
+Estou dedicando literalmente meu tempo pra criar esse site para minha incrível Momolada.
+
+Meu único e último amor.
+
+(embora sua mãe ache o contrário)
+
+Sou bem ruim já que estou programando no celular, mas fiz o meu melhor.
+
+MWA 💙
 
 </div>
 </div>
 
-<div class="box">
-<div class="title">personagem favorito</div>
+<div class="box" id="personagens">
+<div class="title">Personagens Favoritos</div>
 
 <div class="content">
 
-<div class="★">
+<div class="friends">
 
-<div class="★">
-<img src="https://picsum.photos/150?1">
+<div class="friend">
+<img src="https://picsum.photos/200?1">
 <p>Rei Ayanami</p>
 </div>
 
-<div class="★">
-<img src="https://picsum.photos/150?2">
+<div class="friend">
+<img src="https://picsum.photos/200?2">
 <p>Bocchi</p>
 </div>
 
-<div class="★">
-<img src="https://picsum.photos/150?3">
+<div class="friend">
+<img src="https://picsum.photos/200?3">
 <p>L</p>
 </div>
 
-<div class="★">
-<img src="https://picsum.photos/150?4">
+<div class="friend">
+<img src="https://picsum.photos/200?4">
 <p>Mello</p>
 </div>
 
@@ -201,18 +244,56 @@ Estou dedicando literalmente meu tempo pra Criar esse site para minha incrível 
 </div>
 
 <div class="box">
-<div class="title">frases da ana que eu amo</div>
+<div class="title">Frases da Ana que eu amo</div>
 
 <div class="content">
 
 <div class="comment">
-<b>frase 1:</b> quando ela diz"UmUm" em tom de negação
+<b>Frase 1:</b>
+quando ela diz "UmUm" em tom de negação
 </div>
 
 <div class="comment">
-<b>frase 2:</b> quando a anna fala "eu te amo" de um jeito bem fofucho
+<b>Frase 2:</b>
+quando a Anna fala "eu te amo"
+de um jeito bem fofucho
 </div>
 
+</div>
+</div>
+
+<div class="box" id="hobbies">
+<div class="title">Hobbies</div>
+<div class="content">
+Dormir, conversar com o Gabriel e ser perfeita.
+</div>
+</div>
+
+<div class="box" id="musicas">
+<div class="title">Músicas</div>
+<div class="content">
+Adicione aqui as músicas favoritas dela.
+</div>
+</div>
+
+<div class="box" id="comidas">
+<div class="title">Comidas Favoritas</div>
+<div class="content">
+Adicione aqui as comidas favoritas dela.
+</div>
+</div>
+
+<div class="box" id="gostos">
+<div class="title">Gostos</div>
+<div class="content">
+Adicione aqui os gostos dela.
+</div>
+</div>
+
+<div class="box" id="namorado">
+<div class="title">Namorado</div>
+<div class="content">
+Gabriel 👍
 </div>
 </div>
 
