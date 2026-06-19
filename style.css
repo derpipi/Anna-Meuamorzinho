@@ -17,14 +17,17 @@ body{
 font-family:Verdana,sans-serif;
 color:white;
 
-background:
-linear-gradient(
-180deg,
-#87ceeb 0%,
-#4fc3f7 30%,
-#2196f3 65%,
-#0d47a1 100%
-);
+background-image:url("gabkhaosreidelas.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
+overflow-x:hidden;
+
+position:relative;
+}
 
 background-attachment:fixed;
 
