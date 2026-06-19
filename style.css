@@ -13,21 +13,27 @@ scroll-behavior:smooth;
 /* ===== FUNDO FRUTIGER AERO ===== */
 
 body{
+
 font-family:Verdana,sans-serif;
 color:white;
 
 background:
 linear-gradient(
 180deg,
-#001a44 0%,
-#003c8f 35%,
-#00a2ff 100%
+#87ceeb 0%,
+#4fc3f7 30%,
+#2196f3 65%,
+#0d47a1 100%
 );
 
 background-attachment:fixed;
 
 overflow-x:hidden;
+
+position:relative;
 }
+
+/* bolhas/reflexos */
 
 body::before{
 content:"";
@@ -42,9 +48,22 @@ height:100%;
 pointer-events:none;
 
 background:
-radial-gradient(circle at 20% 20%,rgba(255,255,255,.18),transparent 250px),
-radial-gradient(circle at 80% 30%,rgba(255,255,255,.12),transparent 200px),
-radial-gradient(circle at 60% 80%,rgba(255,255,255,.15),transparent 250px);
+
+radial-gradient(circle at 15% 20%,
+rgba(255,255,255,.35),
+transparent 180px),
+
+radial-gradient(circle at 80% 25%,
+rgba(255,255,255,.25),
+transparent 220px),
+
+radial-gradient(circle at 70% 80%,
+rgba(255,255,255,.2),
+transparent 250px),
+
+radial-gradient(circle at 30% 90%,
+rgba(255,255,255,.15),
+transparent 200px);
 
 z-index:-1;
 }
@@ -57,27 +76,27 @@ text-align:center;
 
 padding:25px;
 
+font-size:2.2rem;
+font-weight:bold;
+
 background:
 linear-gradient(
 to bottom,
-rgba(135,206,250,.8),
-rgba(30,80,180,.7)
+rgba(255,255,255,.45),
+rgba(100,181,246,.35)
 );
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(20px);
 
-border-bottom:2px solid rgba(255,255,255,.4);
+border-bottom:
+1px solid rgba(255,255,255,.45);
 
-font-size:2rem;
-font-weight:bold;
+box-shadow:
+0 0 25px rgba(255,255,255,.25);
 
 text-shadow:
 0 0 10px white,
-0 0 20px #7dd3fc,
-0 0 30px #38bdf8;
-
-box-shadow:
-0 0 25px rgba(255,255,255,.2);
+0 0 20px #b3e5fc;
 }
 
 /* ===== LAYOUT ===== */
@@ -98,28 +117,28 @@ grid-template-columns:320px 1fr;
 gap:20px;
 }
 
-/* ===== CAIXAS VIDRO FOSCO ===== */
+/* ===== CAIXAS ===== */
 
 .box{
 
 background:
-rgba(255,255,255,.10);
+rgba(255,255,255,.18);
 
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.25);
+1px solid rgba(255,255,255,.4);
 
-border-radius:20px;
+border-radius:25px;
 
-box-shadow:
-0 8px 30px rgba(0,100,255,.25),
-inset 0 1px 0 rgba(255,255,255,.25);
+overflow:hidden;
 
 margin-bottom:20px;
 
-overflow:hidden;
+box-shadow:
+0 8px 30px rgba(0,100,255,.15),
+inset 0 1px 0 rgba(255,255,255,.5);
 
 transition:.35s;
 }
@@ -130,35 +149,34 @@ transform:
 translateY(-4px);
 
 box-shadow:
-0 12px 40px rgba(0,180,255,.45),
-0 0 25px rgba(255,255,255,.15);
+0 12px 40px rgba(255,255,255,.2),
+0 0 30px rgba(125,211,252,.4);
 }
 
 /* ===== TITULOS ===== */
 
 .title{
 
-background:
-linear-gradient(
-to bottom,
-rgba(180,230,255,.65),
-rgba(40,100,220,.55)
-);
-
 padding:12px;
 
 font-size:20px;
 font-weight:bold;
 
-color:white;
-
-text-shadow:
-0 0 10px white,
-0 0 15px #7dd3fc;
+background:
+linear-gradient(
+to bottom,
+rgba(255,255,255,.35),
+rgba(120,200,255,.25)
+);
 
 border-bottom:
 1px solid rgba(255,255,255,.25);
+
+text-shadow:
+0 0 8px white;
 }
+
+/* ===== CONTEÚDO ===== */
 
 .content{
 padding:15px;
@@ -170,25 +188,22 @@ padding:15px;
 
 width:100%;
 
-border-radius:15px;
+border-radius:20px;
 
 border:
-2px solid rgba(255,255,255,.4);
+2px solid rgba(255,255,255,.5);
 
 box-shadow:
-0 0 15px rgba(255,255,255,.3),
-0 0 25px rgba(0,180,255,.4);
+0 0 20px rgba(255,255,255,.25);
 }
 
-/* ===== STATUS ===== */
+/* ===== ONLINE ===== */
 
 .online{
 
-color:#8cffb3;
+color:#ccffcc;
 
 font-weight:bold;
-
-margin-top:10px;
 
 text-shadow:
 0 0 10px #00ff88;
@@ -207,8 +222,7 @@ list-style:none;
 }
 
 .interests li{
-border-bottom:
-1px solid rgba(255,255,255,.12);
+margin-bottom:4px;
 }
 
 .interests a{
@@ -217,9 +231,9 @@ display:block;
 
 padding:10px;
 
-color:#dbeafe;
+color:white;
 
-text-decoration:none;
+border-radius:10px;
 
 transition:.25s;
 }
@@ -227,13 +241,12 @@ transition:.25s;
 .interests a:hover{
 
 background:
-rgba(255,255,255,.12);
+rgba(255,255,255,.15);
 
 padding-left:18px;
 
-color:white;
-
-border-radius:8px;
+box-shadow:
+0 0 10px rgba(255,255,255,.15);
 }
 
 /* ===== PERSONAGENS ===== */
@@ -262,7 +275,7 @@ object-fit:cover;
 border-radius:15px;
 
 border:
-2px solid rgba(255,255,255,.35);
+2px solid rgba(255,255,255,.4);
 
 transition:.3s;
 }
@@ -270,11 +283,11 @@ transition:.3s;
 .friend img:hover{
 
 transform:
-scale(1.05);
+scale(1.06);
 
 box-shadow:
-0 0 15px white,
-0 0 25px #38bdf8;
+0 0 20px white,
+0 0 30px #7dd3fc;
 }
 
 .friend p{
@@ -289,43 +302,39 @@ background:
 rgba(255,255,255,.08);
 
 border:
-1px solid rgba(255,255,255,.15);
+1px solid rgba(255,255,255,.2);
 
-border-radius:12px;
+border-radius:15px;
 
 padding:12px;
 
 margin-top:10px;
-
-transition:.3s;
 }
 
 .comment:hover{
 
 box-shadow:
-0 0 15px rgba(0,180,255,.3);
+0 0 15px rgba(255,255,255,.15);
 }
 
 /* ===== PLAYLIST ===== */
 
 #musicas iframe{
 
-border-radius:18px;
-
-overflow:hidden;
+border-radius:20px;
 
 border:
-2px solid rgba(255,255,255,.25);
+2px solid rgba(255,255,255,.4);
 
 box-shadow:
-0 0 15px rgba(0,180,255,.35);
+0 0 20px rgba(125,211,252,.3);
 }
 
 #musicas .content{
 text-align:center;
 }
 
-/* ===== PIXEL ===== */
+/* ===== NOME ===== */
 
 .pixel{
 
@@ -333,22 +342,17 @@ font-family:"Courier New",monospace;
 
 letter-spacing:3px;
 
-color:#e0f2fe;
+color:white;
 
 text-shadow:
 0 0 10px white,
-0 0 20px #7dd3fc;
-
-margin-top:10px;
-margin-bottom:10px;
+0 0 20px #b3e5fc;
 }
 
 /* ===== LINKS ===== */
 
 a{
-
-color:#dbeafe;
-
+color:#e1f5fe;
 text-decoration:none;
 }
 
@@ -362,16 +366,12 @@ color:white;
 width:10px;
 }
 
-::-webkit-scrollbar-track{
-background:#003c8f;
-}
-
 ::-webkit-scrollbar-thumb{
 
 background:
 linear-gradient(
-#7dd3fc,
-#2563eb
+#b3e5fc,
+#42a5f5
 );
 
 border-radius:20px;
