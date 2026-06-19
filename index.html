@@ -3,203 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ANNA!!</title>
-<link rel="stylesheet" href="style.css">
+<title>PipiSpace</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#000;
+background-image:
+radial-gradient(white 1px, transparent 1px);
+background-size:35px 35px;
+font-family:Verdana,sans-serif;
+color:white;
+}
+
+.banner{
+background:linear-gradient(#0f2a5a,#163c82);
+padding:15px;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+border-bottom:4px solid #4da3ff;
+}
+
+.container{
+width:1200px;
+max-width:95%;
+margin:auto;
+padding:20px;
+display:grid;
+grid-template-columns:320px 1fr;
+gap:20px;
+}
+
+.box{
+background:#050505;
+border:3px solid #2962ff;
+box-shadow:0 0 15px #2962ff;
+margin-bottom:20px;
+}
+
+.title{
+background:#163c82;
+padding:8px;
+font-weight:bold;
+font-size:20px;
+}
+
+.content{
+padding:15px;
+}
+
+.avatar{
+width:100%;
+border:3px solid #4da3ff;
+}
+
+.online{
+color:#00ff00;
+font-weight:bold;
+margin-top:10px;
+}
+
+.about{
+line-height:1.7;
+}
+
+.friends{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.friend img{
+width:100%;
+height:120px;
+object-fit:cover;
+border:2px solid #4da3ff;
+}
+
+.friend{
+text-align:center;
+font-size:14px;
+}
+
+.comment{
+background:#0b0b0b;
+border:1px solid #4da3ff;
+padding:10px;
+margin-top:10px;
+}
+
+.interests li{
+list-style:none;
+padding:4px;
+}
+
+.pixel{
+font-family:"Courier New";
+letter-spacing:2px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="topbar">
-    <h1>Profile</h1>
+<div class="banner">
+★ PIPISPACE ★
 </div>
 
 <div class="container">
 
-    <h1 class="username">ANNA!!</h1>
+<div>
 
-    <div class="layout">
+<div class="box">
+<div class="title">Perfil</div>
 
-        <!-- ESQUERDA -->
+<div class="content">
 
-        <div class="left">
+<img class="avatar"
+src="https://i.imgur.com/Fv9Jz14.jpeg">
 
-            <div class="panel profile">
+<h2 class="pixel">PIPI!!</h2>
 
-                <img src="anna.jpg" alt="Anna">
+<p>"Programando coisas aleatórias"</p>
 
-                <div class="info">
+<p class="online">🟢 ONLINE</p>
 
-                    <p>"listening music"</p>
-                    <br>
+</div>
+</div>
 
-                    <p>"don't be afraid to talk to me :)"</p>
+<div class="box">
+<div class="title">Interesses</div>
 
-                    <div class="online">
-                        🟢 ONLINE!
-                    </div>
+<div class="content">
+<ul class="interests">
+<li>🎮 Games</li>
+<li>💻 Programação</li>
+<li>🇯🇵 Japão</li>
+<li>🎵 Música</li>
+<li>🛹 Skate</li>
+<li>📚 Estudo</li>
+</ul>
+</div>
+</div>
 
-                </div>
+</div>
 
-            </div>
+<div>
 
-            <div class="panel mood">
-                Mood: apaixonada 💙
-            </div>
+<div class="box">
+<div class="title">Sobre Mim</div>
 
-            <div class="panel interests">
+<div class="content about">
 
-                <div class="panel-title">
-                    ANNA!!'s Interests
-                </div>
+Meu nome é Gabriel.
 
-                <table>
+Gosto de programação, cultura japonesa,
+computadores antigos e criar projetos para
+GitHub.
 
-                    <tr>
-                        <td class="cat">General</td>
+Meu objetivo é trabalhar remotamente ou
+conseguir oportunidades internacionais.
 
-                        <td>
-                            🎵 MUSIC<br>
-                            🌊 FRUTIGER AERO<br>
-                            🎀 CUTE THINGS<br>
-                            💙 YOU
-                        </td>
-                    </tr>
+</div>
+</div>
 
-                    <tr>
-                        <td class="cat">Music</td>
+<div class="box">
+<div class="title">Friend Space</div>
 
-                        <td>
-                            Ayesha Erotica<br>
-                            Britney Spears<br>
-                            Lady Gaga
-                        </td>
-                    </tr>
+<div class="content">
 
-                    <tr>
-                        <td class="cat">Movies</td>
+<div class="friends">
 
-                        <td>
-                            Mean Girls<br>
-                            Clueless<br>
-                            Monster High
-                        </td>
-                    </tr>
+<div class="friend">
+<img src="https://picsum.photos/150?1">
+<p>Amigo 1</p>
+</div>
 
-                </table>
+<div class="friend">
+<img src="https://picsum.photos/150?2">
+<p>Amigo 2</p>
+</div>
 
-            </div>
+<div class="friend">
+<img src="https://picsum.photos/150?3">
+<p>Amigo 3</p>
+</div>
 
-        </div>
+<div class="friend">
+<img src="https://picsum.photos/150?4">
+<p>Amigo 4</p>
+</div>
 
-        <!-- DIREITA -->
+</div>
 
-        <div class="right">
+</div>
+</div>
 
-            <div class="panel about">
+<div class="box">
+<div class="title">Comentários</div>
 
-                <div class="panel-title">
-                    ANNA!!'s Blurbs
-                </div>
+<div class="content">
 
-                <div class="about-box">
+<div class="comment">
+<b>Visitante:</b> Perfil muito legal!
+</div>
 
-                    <h2>About Me</h2>
+<div class="comment">
+<b>Amigo:</b> Gostei do tema azul.
+</div>
 
-                    <p>
-                        Meu nome é Anna!!
-                        Eu gosto de música,
-                        personagens fofinhos,
-                        animes e passar tempo
-                        com quem eu amo.
-                    </p>
+</div>
+</div>
 
-                    <br>
-
-                    <h2>Who I'd like to meet:</h2>
-
-                    <p>
-                        Você 💙
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="panel friends">
-
-                <div class="panel-title">
-                    ANNA!!'s Personagens Favoritos
-                </div>
-
-                <p class="friend-count">
-                    ANNA!! tem 8 personagens favoritos.
-                </p>
-
-                <div class="friends-grid">
-
-                    <div class="friend">
-                        <span>Miku</span>
-                        <img src="char1.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Fluttershy</span>
-                        <img src="char2.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Nana</span>
-                        <img src="char3.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Marin</span>
-                        <img src="char4.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Hachi</span>
-                        <img src="char5.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Yui</span>
-                        <img src="char6.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Lain</span>
-                        <img src="char7.jpg">
-                    </div>
-
-                    <div class="friend">
-                        <span>Rei</span>
-                        <img src="char8.jpg">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="panel comments">
-
-                <div class="panel-title">
-                    ANNA!!'s Comments
-                </div>
-
-                <div class="comment">
-                    💙 Você é a pessoa mais especial da minha vida.
-                </div>
-
-                <div class="comment">
-                    ✨ Obrigado por existir.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
