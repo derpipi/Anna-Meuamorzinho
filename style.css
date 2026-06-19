@@ -10,14 +10,14 @@ html{
 scroll-behavior:smooth;
 }
 
-/* ===== FUNDO FRUTIGER AERO ===== */
+/* ===== FUNDO ===== */
 
 body{
 
 font-family:Verdana,sans-serif;
 color:white;
 
-background-image:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+background-image:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920");
 
 background-size:cover;
 background-position:center;
@@ -25,18 +25,10 @@ background-repeat:no-repeat;
 background-attachment:fixed;
 
 overflow-x:hidden;
-
 position:relative;
 }
 
-background-attachment:fixed;
-
-overflow-x:hidden;
-
-position:relative;
-}
-
-/* bolhas/reflexos */
+/* ===== BRILHOS FRUTIGER AERO ===== */
 
 body::before{
 content:"";
@@ -61,14 +53,20 @@ rgba(255,255,255,.25),
 transparent 220px),
 
 radial-gradient(circle at 70% 80%,
-rgba(255,255,255,.2),
+rgba(255,255,255,.20),
 transparent 250px),
 
 radial-gradient(circle at 30% 90%,
 rgba(255,255,255,.15),
 transparent 200px);
 
-z-index:-1;
+z-index:0;
+}
+
+.banner,
+.container{
+position:relative;
+z-index:1;
 }
 
 /* ===== TOPO ===== */
@@ -90,6 +88,7 @@ rgba(100,181,246,.35)
 );
 
 backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
 
 border-bottom:
 1px solid rgba(255,255,255,.45);
@@ -110,7 +109,6 @@ width:1200px;
 max-width:95%;
 
 margin:auto;
-
 padding:20px;
 
 display:grid;
@@ -148,8 +146,7 @@ transition:.35s;
 
 .box:hover{
 
-transform:
-translateY(-4px);
+transform:translateY(-4px);
 
 box-shadow:
 0 12px 40px rgba(255,255,255,.2),
@@ -285,8 +282,7 @@ transition:.3s;
 
 .friend img:hover{
 
-transform:
-scale(1.06);
+transform:scale(1.06);
 
 box-shadow:
 0 0 20px white,
@@ -367,6 +363,10 @@ color:white;
 
 ::-webkit-scrollbar{
 width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:rgba(0,0,0,.2);
 }
 
 ::-webkit-scrollbar-thumb{
