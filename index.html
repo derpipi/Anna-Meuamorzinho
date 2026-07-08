@@ -1,485 +1,534 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halpa Ocean</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    /* =========================
-       RESET E CONFIGURAÇÕES
-    ========================= */
+<title>Halpa Ocean</title>
 
-    :root {
-      --glass-bg: rgba(255, 255, 255, 0.12);
-      --glass-bg-light: rgba(255, 255, 255, 0.15);
-      --glass-border: rgba(255, 255, 255, 0.25);
-      --glow: #7dd3fc;
-      --text: #ffffff;
-      --link: #cceeff;
-      --online: #7cffb2;
-      --shadow: rgba(0, 0, 0, 0.25);
-    }
+<link rel="stylesheet" href="style.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Verdana, sans-serif;
-      color: var(--text);
-      overflow-x: hidden;
-
-      background-image: url("Fundodosite.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 20, 60, 0.35);
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: white;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .banner {
-      text-align: center;
-      padding: 25px;
-      font-size: 2rem;
-      font-weight: bold;
-
-      background: var(--glass-bg-light);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-
-      text-shadow:
-        0 0 10px white,
-        0 0 20px var(--glow);
-    }
-
-    /* =========================
-       LAYOUT
-    ========================= */
-
-    .container {
-      width: 1200px;
-      max-width: 95%;
-      margin: auto;
-      padding: 20px;
-
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 20px;
-    }
-
-    .sidebar,
-    .main-content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* =========================
-       CARDS
-    ========================= */
-
-    .box {
-      overflow: hidden;
-      border-radius: 20px;
-
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      box-shadow:
-        0 8px 25px var(--shadow),
-        0 0 15px rgba(125, 211, 252, 0.25);
-
-      transition: 0.3s;
-    }
-
-    .box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 35px rgba(125, 211, 252, 0.35);
-    }
-
-    .title {
-      padding: 12px;
-      font-size: 20px;
-      font-weight: bold;
-
-      background: rgba(255, 255, 255, 0.12);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-      text-shadow: 0 0 10px white;
-    }
-
-    .content {
-      padding: 15px;
-      line-height: 1.8;
-    }
-
-    .content p + p {
-      margin-top: 12px;
-    }
-
-    /* =========================
-       PERFIL
-    ========================= */
-
-    .avatar {
-      width: 100%;
-      border-radius: 15px;
-      border: 2px solid rgba(255, 255, 255, 0.35);
-      margin-bottom: 15px;
-    }
-
-    .pixel {
-      font-family: "Courier New", monospace;
-      letter-spacing: 2px;
-
-      text-shadow:
-        0 0 10px white,
-        0 0 20px var(--glow);
-    }
-
-    .online {
-      color: var(--online);
-      font-weight: bold;
-      text-shadow: 0 0 10px #00ff88;
-      margin-top: 10px;
-    }
-
-    /* =========================
-       MENU
-    ========================= */
-
-    .interests {
-      list-style: none;
-    }
-
-    .interests a {
-      display: block;
-      padding: 10px;
-      border-radius: 10px;
-      color: white;
-      transition: 0.3s;
-    }
-
-    .interests a:hover {
-      background: rgba(255, 255, 255, 0.12);
-      padding-left: 18px;
-    }
-
-    /* =========================
-       PERSONAGENS
-    ========================= */
-
-    .friends {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-    }
-
-    .friend {
-      text-align: center;
-    }
-
-    .friend img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-
-      border-radius: 15px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-
-      transition: 0.3s;
-    }
-
-    .friend img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px var(--glow);
-    }
-
-    /* =========================
-       COMENTÁRIOS
-    ========================= */
-
-    .comment {
-      padding: 10px;
-      margin-top: 10px;
-
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-    }
-
-    .comment:first-child {
-      margin-top: 0;
-    }
-
-    /* =========================
-       PLAYLIST
-    ========================= */
-
-    #musicas iframe {
-      width: 100%;
-      border: 2px solid rgba(255, 255, 255, 0.25);
-      border-radius: 18px;
-    }
-
-    /* =========================
-       SCROLLBAR
-    ========================= */
-
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--glow);
-      border-radius: 20px;
-    }
-
-    /* =========================
-       RESPONSIVIDADE
-    ========================= */
-
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      .friends {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header class="banner">
-    ★ HALPASPACE ★
-  </header>
+
+<header class="banner">
+★ HALPASPACE ★
+</header>
 
 
-    <!-- LATERAL -->
-    <aside class="sidebar">
 
-      <section class="box">
-        <div class="title">Perfil</div>
+<main class="container">
 
-        <div class="content">
-          <img
-            class="avatar"
-            src="imagens/meumor.jpg"
-            alt="Foto da Luluzinha"
-          >
 
-          <h2 class="pixel">LULUZINHA!!</h2>
+<!-- =========================
+     LATERAL
+========================= -->
 
-          <p>
-            LITERALMENTE A MAIS PERFEITA
-            (e mais cega pra conseguir ficar com o gabriel)
-          </p>
+<aside class="sidebar">
 
-          <p class="online">💙 Namorando</p>
-        </div>
-      </section>
 
-      <section class="box">
-        <div class="title">Curiosidades</div>
+<section class="box">
 
-        <div class="content">
-          <ul class="interests">
-            <li><a href="#hobbies">Hobbies</a></li>
-            <li><a href="#musicas">Músicas</a></li>
-            <li><a href="#comidas">Comidas favoritas</a></li>
-            <li><a href="#personagens">Personagens favoritos</a></li>
-            <li><a href="#gostos">Gostos</a></li>
-            <li><a href="#namorado">Namorado</a></li>
-          </ul>
-        </div>
-      </section>
+<div class="title">
+Perfil
+</div>
 
-    </aside>
 
-    <!-- CONTEÚDO -->
-    <section class="main-content">
+<div class="content">
 
-      <section class="box">
-        <div class="title">Motivo da criação do site</div>
 
-        <div class="content">
-          <p>
-            Estou dedicando literalmente meu tempo pra criar esse site para minha incrível Momolada.
-          </p>
+<img
+class="avatar"
+src="imagens/meumor.jpg"
+alt="Foto da Luluzinha"
+>
 
-          <p>
-            Meu único e último amor.
-          </p>
 
-          <p>
-            (embora sua mãe ache o contrário)
-          </p>
+<h2 class="pixel">
+LULUZINHA!!
+</h2>
 
-          <p>
-            Sou bem ruim já que estou programando no celular, mas fiz o meu melhor.
-          </p>
 
-          <p>MWA 💙</p>
-        </div>
-      </section>
+<p>
+LITERALMENTE A MAIS PERFEITA
+(e mais cega pra conseguir ficar com o gabriel)
+</p>
 
-      <section class="box" id="personagens">
-        <div class="title">Personagens Favoritos</div>
 
-        <div class="content">
-          <div class="friends">
+<p class="online">
+💙 Namorando
+</p>
 
-           <article class="friend">
-  <img src="imagens/Rei Ayanami.jpg" alt="Rei Ayanami">
-  <p>Rei Ayanami</p>
-</article>
+
+</div>
+
+</section>
+
+
+
+
+<section class="box">
+
+
+<div class="title">
+Curiosidades
+</div>
+
+
+<div class="content">
+
+
+<ul class="interests">
+
+<li>
+<a href="#hobbies">
+Hobbies
+</a>
+</li>
+
+
+<li>
+<a href="#musicas">
+Músicas
+</a>
+</li>
+
+
+<li>
+<a href="#comidas">
+Comidas favoritas
+</a>
+</li>
+
+
+<li>
+<a href="#personagens">
+Personagens favoritos
+</a>
+</li>
+
+
+<li>
+<a href="#gostos">
+Gostos
+</a>
+</li>
+
+
+<li>
+<a href="#namorado">
+Namorado
+</a>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+</section>
+
+
+</aside>
+
+
+
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================= -->
+
+
+<section class="main-content">
+
+
+
+<section class="box">
+
+
+<div class="title">
+Motivo da criação do site
+</div>
+
+
+<div class="content">
+
+
+<p>
+Estou dedicando literalmente meu tempo pra criar esse site para minha incrível Momolada.
+</p>
+
+
+<p>
+Meu único e último amor.
+</p>
+
+
+<p>
+(embora sua mãe ache o contrário)
+</p>
+
+
+<p>
+Sou bem ruim já que estou programando no celular, mas fiz o meu melhor.
+</p>
+
+
+<p>
+MWA 💙
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="box" id="personagens">
+
+
+<div class="title">
+Personagens Favoritos
+</div>
+
+
+<div class="content">
+
+
+<div class="friends">
+
+
 
 <article class="friend">
-  <img src="imagens/Bocchi.jpg" alt="Bocchi">
-  <p>Bocchi</p>
+
+<img 
+src="imagens/Rei Ayanami.jpg"
+alt="Rei Ayanami"
+>
+
+<p>
+Rei Ayanami
+</p>
+
 </article>
+
+
+
 
 <article class="friend">
-  <img src="imagens/L.jpg" alt="L">
-  <p>L</p>
+
+<img
+src="imagens/Bocchi.jpg"
+alt="Bocchi"
+>
+
+<p>
+Bocchi
+</p>
+
 </article>
+
+
+
 
 <article class="friend">
-  <img src="imagens/Mello.jpg" alt="Mello">
-  <p>Mello</p>
+
+<img
+src="imagens/L.jpg"
+alt="L"
+>
+
+<p>
+L
+</p>
+
 </article>
 
-          </div>
-        </div>
-      </section>
 
-      <section class="box">
-        <div class="title">Frases da Ana que eu amo</div>
 
-        <div class="content">
 
-          <div class="comment">
-            <strong>Frase 1:</strong>
-            quando ela diz "UmUm" em tom de negação
-          </div>
+<article class="friend">
 
-          <div class="comment">
-            <strong>Frase 2:</strong>
-            quando a Anna fala "eu te amo" de um jeito bem fofucho
-          </div>
+<img
+src="imagens/Mello.jpg"
+alt="Mello"
+>
 
-        </div>
-      </section>
+<p>
+Mello
+</p>
 
-      <section class="box" id="hobbies">
-        <div class="title">Hobbies</div>
+</article>
 
-        <div class="content">
-          ser perfeita.
-        </div>
-      </section>
 
-      <section class="box" id="musicas">
-        <div class="title">🎵 Playlist da Ana 🎵</div>
 
-        <div class="content">
+</div>
 
-          <p>As músicas favoritas da Anna 💙</p>
 
-          <iframe
-            height="166"
-            scrolling="no"
-            frameborder="no"
-            allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/halpa-324059367/sets/my-playlisto&color=%234da3ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-          </iframe>
+</div>
 
-        </div>
-      </section>
 
-      <section class="box" id="comidas">
-        <div class="title">Comidas Favoritas</div>
+</section>
+``````html
+<section class="box">
 
-        <div class="content">
-          penis
-        </div>
-      </section>
 
-      <section class="box" id="gostos">
-        <div class="title">Gostos</div>
+<div class="title">
+Frases da Ana que eu amo
+</div>
 
-        <div class="content">
-          penis
-        </div>
-      </section>
 
-      <section class="box" id="namorado">
-        <div class="title">namoro</div>
+<div class="content">
 
-        <div class="content">
 
-          <h3>Gabriel</h3>
+<div class="comment">
 
-          <p>
-            Mlk horroso que por algum motivo ela se apaixonou
-          </p>
+<strong>
+Frase 1:
+</strong>
 
-          <p>
-            <a
-              href="https://www.instagram.com/derpyneverdie?igsh=cGdjcjd0NG9haTgy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @derpyneverdie
-            </a>
-          </p>
+quando ela diz "UmUm" em tom de negação
 
-          <p>
-            8=====D
-          </p>
+</div>
 
-        </div>
-      </section>
 
-    </section>
 
-  </main>
+<div class="comment">
+
+<strong>
+Frase 2:
+</strong>
+
+quando a Anna fala "eu te amo" de um jeito bem fofucho
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="box" id="hobbies">
+
+
+<div class="title">
+Hobbies
+</div>
+
+
+<div class="content">
+
+ser perfeita.
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="box" id="musicas">
+
+
+<div class="title">
+🎵 Playlist da Ana 🎵
+</div>
+
+
+
+<div class="content">
+
+
+<p>
+As músicas favoritas da Anna 💙
+</p>
+
+
+
+<iframe
+
+height="166"
+
+scrolling="no"
+
+frameborder="no"
+
+allow="autoplay"
+
+src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/halpa-324059367/sets/my-playlisto&color=%234da3ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+
+</iframe>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="box" id="comidas">
+
+
+<div class="title">
+Comidas Favoritas
+</div>
+
+
+<div class="content">
+
+penis
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="box" id="gostos">
+
+
+<div class="title">
+Gostos
+</div>
+
+
+<div class="content">
+
+penis
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="box" id="namorado">
+
+
+<div class="title">
+
+Namoro
+
+</div>
+
+
+
+<div class="content">
+
+
+<h3>
+Gabriel
+</h3>
+
+
+
+<p>
+Mlk horroso que por algum motivo ela se apaixonou
+</p>
+
+
+
+
+<p>
+
+<a
+
+href="https://www.instagram.com/derpyneverdie?igsh=cGdjcjd0NG9haTgy"
+
+target="_blank"
+
+rel="noopener noreferrer">
+
+@derpyneverdie
+
+</a>
+
+</p>
+
+
+
+
+<p>
+8=====D
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+</section>
+
+
+</main>
+
+
+
+
+
+<!-- MIKU ANDANDO PELA TELA -->
+
+<img
+
+class="miku-gif"
+
+src="miku.gif"
+
+alt="Miku andando"
+
+
+>
+
+
+
 
 </body>
+
 </html>
+```
+
+
+assim que fica quando combina os dois ?
