@@ -391,3 +391,33 @@ grid-template-columns:1fr;
 .friends{
 grid-template-columns:repeat(2,1fr);
 }
+
+.miku-gif {
+  width: 100px; /* Diminuí um pouquinho mais para se ajustar melhor */
+  height: auto;
+  
+  /* Faz o GIF flutuar por cima de tudo sem quebrar o layout */
+  position: absolute; 
+  top: 90px; /* Ajuste essa altura para alinhar com o fundo azul do banner */
+  z-index: 9999; /* Garante que ela fique na frente do fundo */
+
+  animation: moverMiku 8s linear infinite alternate;
+}
+
+@keyframes moverMiku {
+  0% {
+    left: 0%;
+    transform: scaleX(1);
+  }
+  49% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  100% {
+    /* Ajustado para a nova largura de 100px */
+    left: calc(100% - 100px); 
+    transform: scaleX(-1);
+  }
+}
