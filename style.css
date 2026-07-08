@@ -392,39 +392,28 @@ grid-template-columns:1fr;
 grid-template-columns:repeat(2,1fr);
 }
 
+   
 }
-/* =========================
-   GIF miku
-========================= */
-
-.gif-container {
-  width: 100%;
-  height: 70px;
-  overflow: hidden;
-  position: relative;
-}
-
-.gif-container img {
-  width: 60px; 
+.miku-gif {
+  width: 150px; /* Deixa ela menorzinha */
   height: auto;
-  position: absolute;
-  top: 10px;
-
-  animation: moverGif 6s linear infinite;
+  position: relative; 
+  animation: moverMiku 6s linear infinite alternate;
 }
 
-@keyframes moverGif {
-
+@keyframes moverMiku {
   0% {
-    left: -100px;
+    left: 0%;
+    transform: scaleX(1);
   }
-
+  49% {
+    transform: scaleX(1);
+  }
   50% {
-    left: calc(100% - 80px);
+    transform: scaleX(-1);
   }
-
   100% {
-    left: -100px;
+    left: calc(100% - 150px); /* Garante que ela não passe da borda da tela */
+    transform: scaleX(-1);
   }
-
 }
