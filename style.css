@@ -394,7 +394,7 @@ grid-template-columns:repeat(2,1fr);
 
 }
 /* =========================
-   GIF ANIMADO
+   GIF miku
 ========================= */
 
 .gif-container {
@@ -405,7 +405,7 @@ grid-template-columns:repeat(2,1fr);
 }
 
 .gif-container img {
-  width: 60px; /* tamanho do GIF */
+  width: 60px; 
   height: auto;
   position: absolute;
   top: 10px;
