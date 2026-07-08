@@ -24,7 +24,7 @@ background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
 
-overflow-x:hidden; /* Evita que a Miku crie barra de rolagem horizontal */
+overflow-x:hidden;
 position:relative;
 }
 
@@ -380,22 +380,21 @@ linear-gradient(
 border-radius:20px;
 }
 
-/* ===== ANIMAÇÃO DA MIKU (Disponível para qualquer tela agora) ===== */
+/* ===== ANIMAÇÃO DA MIKU CORRIGIDA ===== */
 
 .miku-gif {
-width: 90px; /* Tamanho ajustado e menorzinho */
+width: 80px;
 height: auto;
-
-position: absolute; 
-top: 100px; /* Altura ideal em relação ao topo azul */
-z-index: 9999; /* Fica na frente do fundo */
-
-animation: moverMiku 10s linear infinite alternate;
+position: fixed;
+top: 95px;
+z-index: 9999;
+pointer-events: none;
+animation: moverMiku 9s linear infinite alternate;
 }
 
 @keyframes moverMiku {
 0% {
-  left: 0%;
+  left: 0px;
   transform: scaleX(1);
 }
 49% {
@@ -405,7 +404,7 @@ animation: moverMiku 10s linear infinite alternate;
   transform: scaleX(-1);
 }
 100% {
-  left: calc(100% - 90px); 
+  left: calc(100vw - 85px);
   transform: scaleX(-1);
 }
 }
