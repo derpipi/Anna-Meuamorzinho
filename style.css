@@ -391,29 +391,3 @@ grid-template-columns:1fr;
 .friends{
 grid-template-columns:repeat(2,1fr);
 }
-
-   
-}
-.miku-gif {
-  width: 150px; /* Deixa ela menorzinha */
-  height: auto;
-  position: relative; 
-  animation: moverMiku 6s linear infinite alternate;
-}
-
-@keyframes moverMiku {
-  0% {
-    left: 0%;
-    transform: scaleX(1);
-  }
-  49% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(-1);
-  }
-  100% {
-    left: calc(100% - 150px); /* Garante que ela não passe da borda da tela */
-    transform: scaleX(-1);
-  }
-}
